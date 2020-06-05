@@ -10,14 +10,15 @@ const login= async(email,password)=>{
             password
         }
     });
+    window.location.href = "http://localhost:3000/me";
     console.log(res);
-    }
+}
     catch(err){
         alert(err.response.data.message);
     }
 }
 
-document.querySelector(".signup-form").addEventListener("submit", e=>{
+document.querySelector(".btn").addEventListener("click", e=>{
     e.preventDefault();
     const email= document.querySelector("#email").value;
     const password= document.querySelector("#password").value;

@@ -58,8 +58,8 @@ exports.updateMe= async(req,res,next)=>{
     
     const filteredObject = filterObj(req.body,"name","email","photo");
 
-    
-    const updatedUser= await User.findByIdAndUpdate({_id:user.id},filteredObject,{new:true, runvalidators:true});
+    console.log("update");
+    const updatedUser= await User.findByIdAndUpdate({_id:user.id},filteredObject,{new:true, runValidators:true});
     res.status(200).json({
         status:"success",
         user: updatedUser

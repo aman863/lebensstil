@@ -2,24 +2,26 @@ const mongoose= require("mongoose");
 const validator= require("validator");
 const bcrypt= require("bcrypt");
 const crypto= require("crypto");
+var uniqueValidator = require('mongoose-unique-validator');
 const userSchema= new mongoose.Schema({
     name: {
         type:String,
-        required:[true,"please provide your name"]
+        required:[true,"Please provide your name"]
     },
     email:{
         type: String,
         validate:{
             validator: validator.isEmail,
-            message:"please provide a valid email address",
+            message:"Please provide a valid email address",
             lowercase: true
         },
-        required:[true,"email id is required"]
+        required:[true,"Email id is required"],
+        unique:[true,"Email id already registered"]
 
     },
     password:{
         type:String,
-        minlength:[8,"password must be more that 8 characters long"],
+        minlength:[8,"Password must be more that 8 characters long"],
         required:true,
         select:false
     },
@@ -30,7 +32,7 @@ const userSchema= new mongoose.Schema({
             validator: function(el){
                 return el===this.password
             },
-            message:"passwords don't match"
+            message:"Passwords don't match"
         }
     },
     changedPasswordAt: {
@@ -41,9 +43,13 @@ const userSchema= new mongoose.Schema({
     photo: String,
     referalCode: String,
     refer:String,
-    mailVerifyToken:String,
-    emailVerification:Boolean
+    mailVerification:String,
+    verified:{
+        type:Boolean,
+        default:false
+    }
 })
+userSchema.plugin(uniqueValidator);
 userSchema.pre("save",async function(next){
     if(! this.isModified("password")){
         return next();

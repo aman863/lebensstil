@@ -1,62 +1,122 @@
-<!DOCTYPE html>
+//- <!DOCTYPE html>
+//- <html lang="en">
+//- <head>
+//-     <meta charset="UTF-8">
+//-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+//-     <title>Lebensstil | Sign up</title>
+
+//-     <!-- Font Icon -->
+//-     <link rel="stylesheet" href="./../public/CSS/signup/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+//-     <!-- Main css -->
+//-     <link rel="stylesheet" href="CSS/signup/signupcss.css">
+//- </head>
+//- <body>
+
+//-     <div class="main">
+
+//-         <section class="signup">
+//-             <!-- <img src="images/signup-bg.jpg" alt=""> -->
+//-             <div class="container">
+//-                 <div class="signup-content">
+//-                     <form method="POST" id="signup-form" class="signup-form">
+//-                         <h2 class="form-title">Create account</h2>
+//-                         <div class="form-group">
+//-                             <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
+//-                         </div>
+//-                         <div class="form-group">
+//-                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+//-                         </div>
+//-                         <div class="form-group">
+//-                             <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
+//-                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+//-                         </div>
+//-                         <div class="form-group">
+//-                             <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+//-                         </div>
+//-                         <div class="form-group">
+//-                             <input type="text" class="form-input" name="code" id="code" placeholder="Referal code(optional)"/>
+//-                         </div>
+//-                         //- <div class="form-group">
+//-                         //-     <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+//-                         //-     <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+//-                         //- </div>
+//-                         <div class="form-group">
+//-                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+//-                         </div>
+//-                     </form>
+//-                     <p class="loginhere">Have already an account ? <a href="/login" class="loginhere-link">Login here</a>
+//-                     </p>
+//-                 </div>
+//-             </div>
+//-         </section>
+
+//-     </div>
+
+//-     <!-- JS -->
+//-     script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
+//-     <script src="javascript/signupjs/vendor/jquery/jquery.min.js"></script>
+//-     <script src="javascript/signupjs/signup.js"></script>
+//- </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+//- </html>
+
+
+
+
+
+
+
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lebensstil | Sign up</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v4.0.1">
+        <title>Signin Template · Bootstrap</title>
 
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="./../public/CSS/signup/fonts/material-icon/css/material-design-iconic-font.min.css">
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="CSS/signup/signupcss.css">
-</head>
-<body>
+        <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <div class="main">
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
 
-        <section class="signup">
-            <!-- <img src="images/signup-bg.jpg" alt=""> -->
-            <div class="container">
-                <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form">
-                        <h2 class="form-title">Create account</h2>
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
-                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="code" id="code" placeholder="Referal code(optional)"/>
-                        </div>
-                        //- <div class="form-group">
-                        //-     <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                        //-     <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                        //- </div>
-                        <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
-                        </div>
-                    </form>
-                    <p class="loginhere">Have already an account ? <a href="login.html" class="loginhere-link">Login here</a>
-                    </p>
-                </div>
-            </div>
-        </section>
 
-    </div>
+    <!-- Custom styles for this template -->
+    <link href="CSS/signup/signupcss.css" rel="stylesheet">
+    </head>
+    <body class="text-center">
+        <form class="form-signin signup-form">
+    <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Full Name</label>
+    <input type="text" id="name" class="form-control" placeholder="Full name" required autofocus>
+    <label for="inputPassword" class="sr-only">Email address</label>
+    <input type="email" id="email" class="form-control" placeholder="Email address" required>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="password" class="form-control" placeholder="Password" required>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="re_password" class="form-control" placeholder="Confirm Password" required>
 
-    <!-- JS -->
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" id="submit">Sign in</button>
+<p class="loginhere">Have already an account ? <a href="/login" class="loginhere-link">Login here</a>
+    </p>
+</form>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
     <script src="javascript/signupjs/vendor/jquery/jquery.min.js"></script>
     <script src="javascript/signupjs/signup.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

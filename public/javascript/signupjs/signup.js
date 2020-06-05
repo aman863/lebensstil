@@ -1,19 +1,6 @@
 
-(function($) {
 
-    $(".toggle-password").click(function() {
-
-        $(this).toggleClass("zmdi-eye zmdi-eye-off");
-        var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-          input.attr("type", "text");
-        } else {
-          input.attr("type", "password");
-        }
-      });
-
-})(jQuery);
-const signup=async(name,email,password,passwordConfirm,code)=>{
+const signup=async(name,email,password,passwordConfirm)=>{
   try{
     console.log(name,email);
   const res= await axios({
@@ -23,15 +10,18 @@ const signup=async(name,email,password,passwordConfirm,code)=>{
       name,
       email,
       password,
-      passwordConfirm,
-      code
+      passwordConfirm
     }
   });
+  window.location.href = "http://localhost:3000/me";
   console.log(res);
 }
 catch(err){
   console.log(err.response.data);
+
+  alert(err.response.data.error.message.split(":")[2]);
 }
+
 }
 
 
@@ -41,7 +31,7 @@ document.querySelector(".signup-form").addEventListener("submit", e=>{
   const email= document.querySelector("#email").value;
   const password= document.querySelector("#password").value;
   const passwordConfirm= document.querySelector("#re_password").value;
-  const code= document.querySelector("#code").value;
-  signup(name,email,password,passwordConfirm,code);
+  
+  signup(name,email,password,passwordConfirm);
 
 })

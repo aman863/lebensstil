@@ -11,14 +11,14 @@
 
 <body>
 <header class="header">
-    <nav class="nav nav--tours"><a class="nav__el" href="#">Welcome #{name.split(" ")[0]}</a>
+    <nav class="nav nav--tours"><a class="nav__el" href="#">Welcome #{user.name.split(" ")[0]}</a>
     //- <img src="/img/logo-white.png" alt="Natours logo"></nav>
     //- <nav class="nav nav--user"><button class="nav__el">Log out</button><button class="nav__el nav__el--cta">Sign up</button>
 <nav class="nav logout nav--user">
 a.nav__el.logout(href="/") Log out
 a.nav__el(href="#")
-    img.nav__user-img(src="img/users/10.jpg" alt="User photo")
-    span #{name.split(" ")[0]}
+    img.nav__user-img(src="img/users/10.png" alt="User photo")
+    span #{user.name.split(" ")[0]}
 
     </nav>
 </header>
@@ -34,11 +34,15 @@ a.nav__el(href="#")
 </svg>My bookings</a></li>
     <li><a href="#"><svg>
         <use xlink:href="img/icons.svg#icon-star"></use>
-</svg>My reviews</a></li>
+
+
+</svg></a></li>
     <li><a href="#"><svg>
         <use xlink:href="img/icons.svg#icon-credit-card"></use>
-</svg>Billing</a></li>
+</svg></a></li>
     </ul>
+
+    
     //- <div class="admin-nav">
     //-     <h5 class="admin-nav__heading">Admin</h5>
     //-     <ul class="side-nav">
@@ -61,10 +65,10 @@ a.nav__el(href="#")
         <div class="user-view__form-container">
             <h2 class="heading-secondary ma-bt-md">Your account settings</h2>
             <form class="form form-user-data">
-                <div class="form__group"><label class="form__label" for="name">Name</label><input class="form__input" id="name" type="text" value="Jonas Schmedtmann" required></div>
-                <div class="form__group ma-bt-md"><label class="form__label" for="email">Email address</label><input class="form__input" id="email" type="email" value="admin@natours.io" required></div>
-                <div class="form__group form__photo-upload"><img class="form__user-photo" src="img/users/10.jpg" alt="User photo"><a class="btn-text" href="">Choose new photo</a></div>
-                <div class="form__group right"><button class="btn btn--small btn--green">Save settings</button></div>
+                <div class="form__group"><label class="form__label" for="name">Name</label><input class="form__input" id="name" type="text" value=#{user.name} required></div>
+                //- <div class="form__group ma-bt-md"><label class="form__label" for="email">Email address</label><input class="form__input" id="email" type="email" value=#{user.email} required></div>
+                <div class="form__group form__photo-upload"><img class="form__user-photo" src="img/users/10.png" alt="User photo"><a class="btn-text" href="">Choose new photo</a></div>
+                <div class="form__group right"><button class="btn btn--small btn--green saveSet">Save settings</button></div>
             </form>
         </div>
         <div class="line">&nbsp;</div>
@@ -74,7 +78,7 @@ a.nav__el(href="#")
                 <div class="form__group"><label class="form__label" for="password-current">Current password</label><input class="form__input" id="password-current" type="password" placeholder="••••••••" required minlength="8"></div>
                 <div class="form__group"><label class="form__label" for="password">New password</label><input class="form__input" id="password" type="password" placeholder="••••••••" required minlength="8"></div>
                 <div class="form__group ma-bt-lg"><label class="form__label" for="password-confirm">Confirm password</label><input class="form__input" id="password-confirm" type="password" placeholder="••••••••" required minlength="8"></div>
-                <div class="form__group right"><button class="btn btn--small btn--green">Save password</button>
+                <div class="form__group right"><button class="btn btn--small btn--green savePass">Save password</button>
 </main>
     //- <div class="footer"></div>
     //-     </div>
@@ -92,6 +96,7 @@ a.nav__el(href="#")
     //- <p class="footer__copyright">&copy; by Jonas Schmedtmann. All rights reserved.</p>
     //- </div>
 </div>
-script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
+ script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
 <script src="javascript/dashboard.js"></script>
+<script src="javascript/updateSettings.js"></script>
 </body>

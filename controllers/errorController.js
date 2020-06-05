@@ -1,4 +1,5 @@
 const sendErrorDev= (err,res)=>{
+    console.log("hello from the errordev")
     res.status(err.statusCode).json({
              
          status: err.status,
@@ -55,28 +56,28 @@ module.exports= (err,req,res,next)=>{
     err.status= err.status || "fail";
    if(process.env.NODE_ENV==="development")
         sendErrorDev(err,res);
-//   else if(process.env.NODE_ENV==="production"){
-//   let error={...err};
-//   {
-//     if(error.name==="CastError"){
-//         error = handleCastErrorDb(error);
-//    }
-//    if(error.code===11000){
-//         error= handleDuplicateKeysDb(error);
-//    }
+  else if(process.env.NODE_ENV==="production"){
+  let error={...err};
+  {
+    if(error.name==="CastError"){
+        error = handleCastErrorDb(error);
+   }
+   if(error.code===11000){
+        error= handleDuplicateKeysDb(error);
+   }
 
-//    if(error.name==="ValidationError"){
-//         error= handleValidationErrorDb(error);
-//    }
-//    if(error.name==="JsonWebTokenError"){
-//         error= handleJwtError(error);
-//    }
-//    if(error.name==="TokenExpiredError"){
-//         error= handleJwtExpirationError(error);
-//    }
-//    sendErrorProd(error,res);
-//   }
+   if(error.name==="ValidationError"){
+        error= handleValidationErrorDb(error);
+   }
+   if(error.name==="JsonWebTokenError"){
+        error= handleJwtError(error);
+   }
+   if(error.name==="TokenExpiredError"){
+        error= handleJwtExpirationError(error);
+   }
+   sendErrorProd(error,res);
+  }
   
-// }
+}
 
 }

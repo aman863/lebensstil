@@ -22,6 +22,7 @@ app.use((req,res,next)=>{
     console.log("Aman");
     next();
 })
+console.log(process.env.NODE_ENV);
 app.use("/",viewRouter);
 app.use("/api/v1/user",userRouter);
 

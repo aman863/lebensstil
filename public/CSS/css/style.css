@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6{
 	font-family: 'Raleway', sans-serif;
 	text-transform: uppercase;
 	font-weight: 900;
-	color: #424242;
+	color: black;
 	margin-bottom: 35px;
 	margin-top: 0;
 }
@@ -140,12 +140,13 @@ section{
 .section{
 	padding: 100px 0;
 }
-.ubutia-icon{
-	background:transparent url(./../../img/homepage/logo.png) no-repeat;
+/* .ubutia-icon{
+	background:transparent url("./../../img/homepage/output-onlinepngtools (1).png") no-repeat;
     width: 187px;
     height: 68px;
 	display:block;
-}
+	background-color:transparent;
+} */
 
 .graphic-design{
 	background:transparent url(./../../img/homepage/imgonline-com-ua-resize-RZ9rTS340I9Iu.jpg) no-repeat;
@@ -162,10 +163,11 @@ section{
 }
 
 .printing{
-	background:transparent url(./../../img/homepage/imgonline-com-ua-resize-3uehuGtSYIj0aUA.jpg) no-repeat;
-    width: 120px;
-    height: 120px;
+	background:transparent url(./../../img/homepage/brand-brand-strategy-shutterstock_443845492-800x450_2_200x170.jpg) no-repeat;
+    width: 200px;
+    height: 140px;
 	display:block;
+	margin-right: 100px;
 }
 .play-icon{
 	background:transparent url(./../../img/homepage/video-play-icon.png) no-repeat;
@@ -275,7 +277,7 @@ section{
 	transition: all 0.3s ease-in-out;
 }
 .menu-item{
-	background-color: #1a1a1a;
+	background-color: black;
 	text-align: center;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -295,13 +297,13 @@ section{
 	text-decoration: none;
 }
 .hide-menu{
-	margin-top: -377px;
+	margin-top: -330px;
 }
 .show-menu{
 	margin-top: 0;
 }
 .dark-bar{
-	background-color: #424242;
+	background-color:black;
 	background-image: none;
 }
 .navigation-bar{
