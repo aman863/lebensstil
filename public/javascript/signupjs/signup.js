@@ -5,7 +5,7 @@ const signup=async(name,email,password,passwordConfirm)=>{
     console.log(name,email);
   const res= await axios({
     method:"post",
-    url:"http://localhost:3000/api/v1/user/signUp",
+    url:"/api/v1/user/signUp",
     data:{
       name,
       email,
@@ -13,7 +13,7 @@ const signup=async(name,email,password,passwordConfirm)=>{
       passwordConfirm
     }
   });
-  window.location.href = "http://localhost:3000/me";
+  window.location.href = "/me";
   console.log(res);
 }
 catch(err){
