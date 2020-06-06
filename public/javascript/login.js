@@ -4,13 +4,13 @@ const login= async(email,password)=>{
         console.log(email,password);
     const res= await axios({
         method:"post",
-        url:"http://localhost:3000/api/v1/user/login",
+        url:"/api/v1/user/login",
         data:{
             email,
             password
         }
     });
-    window.location.href = "http://localhost:3000/me";
+    window.location.href = "/me";
     console.log(res);
 }
     catch(err){
