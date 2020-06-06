@@ -12,6 +12,7 @@ const resetPassword= async(password,passwordConfirm)=>{
         
 
     })
+    window.location.href="/login";
     
     console.log(res);
 }
