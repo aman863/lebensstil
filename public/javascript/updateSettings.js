@@ -4,12 +4,12 @@ const updateData= async(name,email)=>{
         console.log("hello");
     const res=await axios({
         method:"PATCH",
-        url:"http://localhost:3000/api/v1/user/updateMe",
+        url:"/api/v1/user/updateMe",
         data:{
             name
         }
     });
-    window.location.href = "http://localhost:3000/me";
+    window.location.href = "/me";
     console.log(res);
 
 }
@@ -23,14 +23,14 @@ const updatePassword=async(currentPassword,newPassword,newPasswordConfirm)=>{
     try {
        const res= await axios({
             method:"PATCH",
-            url:"http://localhost:3000/api/v1/user/updateMypassword",
+            url:"/api/v1/user/updateMypassword",
             data:{
                 currentPassword,
                 newPassword,
                 newPasswordConfirm
             }
         })
-        // window.location.href = "http://localhost:3000/me";
+        window.location.href = "/me";
         console.log(res);
     } catch (err) {
         console.log(err.response);

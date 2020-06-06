@@ -26,7 +26,7 @@ exports.signUp=async(req,res,next)=>{
         console.log("done");
         const url=`${req.protocol}://${req.get("host")}/mailVerification/${mailVerification}`;
         console.log(url);
-        // await new Email(newUser,url).sendWelcome();
+        await new Email(newUser,url).sendWelcome();
         console.log(newUser._id);
         const token = jwt.sign({id:newUser._id},process.env.JWT_SECRET,{
             expiresIn:"30d"

@@ -12,7 +12,7 @@ router.use((req,res,next)=>{
 router.route("/").get(viewControllers.getHomePage);
 router.route("/signup").get(viewControllers.getSignUpPage);
 router.route("/login").get(viewControllers.getLoginPage);
-router.route("/me").get(authControllers.protect, viewControllers.getDashboard);
+router.route("/me").get(authControllers.protect,authControllers.checkVerification, viewControllers.getDashboard);
 router.route("/mailVerification/:token").get(authControllers.mailVerification,authControllers.protect,viewControllers.getDashboard);
 // router.route("/logout").get(authControllers.protect,authControllers.logout);
 router.route("/text").get(viewControllers.getVerificationPage);
