@@ -1,7 +1,7 @@
 const forgotPassword=async(email)=>{
     const res= await axios({
         method:"POST",
-        url:"http://localhost:3000/forgotPassword",
+        url:"/forgotPassword",
         data:{
             email
         }
