@@ -37,3 +37,11 @@ exports.token=(req,res,next)=>{
   console.log(req.params.token);
   next();
 }
+exports.getCheckoutPage=(req,res)=>{
+  const order_id= req.order_id;
+  
+
+res.render("checkout",{
+  order_id
+});
+}

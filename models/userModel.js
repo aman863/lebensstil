@@ -47,7 +47,30 @@ const userSchema= new mongoose.Schema({
     verified:{
         type:Boolean,
         default:false
+    },
+    address:{
+        type:String
+    },
+    contact:{
+        type:Number
+    },
+    country:{
+        type:String
+    },
+    state:{
+        type:String
+    },
+    zip:{
+        type:String
+    },
+    razorpayOrderId:String,
+    razorpayPaymentId:String,
+    razorpaySignature:String,
+    payment:{
+        type:Boolean,
+        default:false
     }
+    
 })
 userSchema.plugin(uniqueValidator);
 userSchema.pre("save",async function(next){

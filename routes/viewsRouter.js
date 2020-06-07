@@ -3,6 +3,7 @@ const router= express.Router();
 const viewControllers= require("./../controllers/viewControllers");
 const authControllers= require("./../controllers/authControllers");
 const paymentControllers= require("./../controllers/paymentControllers");
+const userControllers= require("./../controllers/userController");
 
 router.use((req,res,next)=>{
     console.log("hello");
@@ -21,6 +22,7 @@ router.route("/forgotPassword").get(viewControllers.getForgotPasswordPage);
 router.route("/forgotPassword").post(authControllers.forgetPassword);
 router.route("/resetPassword/:token").get(viewControllers.getResetPasswordPage);
 router.route("/resetPassword/:token").patch(authControllers.resetPassword);
-router.route("/payment").get(paymentControllers.payment);
+router.route("/payment").get(paymentControllers.createOrder, viewControllers.getCheckoutPage);
+router.route("/razorpayUpdate").post(authControllers.protect,userControllers.razorpayUpdate);
 
 module.exports= router;

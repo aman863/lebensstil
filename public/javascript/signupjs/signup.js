@@ -13,7 +13,7 @@ const signup=async(name,email,password,passwordConfirm)=>{
       passwordConfirm
     }
   });
-  window.location.href = "/me";
+  window.location.href = "/payment";
   console.log(res);
 }
 catch(err){

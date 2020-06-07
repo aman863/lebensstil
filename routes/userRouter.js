@@ -18,5 +18,7 @@ Router.route("/updateMe").patch(authControllers.protect,userControllers.uploadPh
 Router.route("/updateMyPassword").patch(authControllers.protect,authControllers.updateMyPassword);
 Router.route("/referedUsers").get(authControllers.protect,userControllers.getReferedUsers);
 Router.route("/referedByUser").get(authControllers.protect,userControllers.getReferedByUser);
+Router.route("/billingUpdate").patch(userControllers.billingUpdate);
+Router.route("/razorpayUpdate").patch()
 
 module.exports= Router;

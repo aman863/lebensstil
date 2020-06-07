@@ -116,3 +116,60 @@ exports.getReferedByUser= async(req,res,next)=>{
         });
     }
 }
+
+exports.billingUpdate=async(req,res)=>{
+    try{
+    
+
+    const updateOptions={
+        address:req.body.address,
+        contact:req.body.contact,
+        country:req.body.country,
+        zip:req.body.zip
+    }
+    const updatedUser= await User.findOneAndUpdate({email:req.body.email},updateOptions,{new:true});
+
+    res.status(200).json({
+        status:"success",
+        updatedUser
+    });
+}
+catch(err){
+    console.log(err);
+    res.status(400).json({
+        status:"fail",
+        err
+    })
+}
+
+}
+exports.razorpayUpdate=async(req,res)=>{
+    try {
+        const user= req.user;
+        const updateOptions={
+            razorpayPaymentId:req.body.razorpay_payment_id,
+            razorpayOrderId:req.body.razorpay_order_id,
+            razorpaySignature:req.body.razorpay_signature,
+            payment:true
+
+        }
+        const updatedUser= await User.findOneAndUpdate({email:user.email},updateOptions,{new:true});
+        const generated_signature = hmac_sha256(req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id, "trzSHuA3lj6eudlbKt0FFbfm");
+
+        if (generated_signature == req.body.razorpay_signature) {
+            
+            res.redirect("/me");
+          }
+          res.status(400).json({
+           status:"fail",
+           message:"unsuccessful payment"
+          });
+
+    } catch (err) {
+        console.log(err);
+        res.status(400).json({
+            status:"error",
+            err
+        })
+    }
+}
