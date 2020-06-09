@@ -120,6 +120,7 @@ exports.getReferedByUser= async(req,res,next)=>{
 exports.billingUpdate=async(req,res)=>{
     try{
     
+        console.log("updating user");
 
     const updateOptions={
         address:req.body.address,
@@ -127,6 +128,7 @@ exports.billingUpdate=async(req,res)=>{
         country:req.body.country,
         zip:req.body.zip
     }
+    
     const updatedUser= await User.findOneAndUpdate({email:req.body.email},updateOptions,{new:true});
 
     res.status(200).json({
@@ -156,7 +158,7 @@ exports.razorpayUpdate=async(req,res)=>{
         const updatedUser= await User.findOneAndUpdate({email:user.email},updateOptions,{new:true});
         const generated_signature = hmac_sha256(req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id, "trzSHuA3lj6eudlbKt0FFbfm");
 
-        if (generated_signature == req.body.razorpay_signature) {
+        if (generated_signature === req.body.razorpay_signature) {
             
             res.redirect("/me");
           }

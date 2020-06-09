@@ -1,8 +1,8 @@
-const billingUpdate=(name,email,address,contact,country,state,zip)=>{
+const billingUpdate=async(name,email,address,contact,country,state,zip)=>{
     try {
         const res= await axios({
             method:"patch",
-            url:"/api/v1/users/billingUpdate",
+            url:"/api/v1/user/billingUpdate",
             data:{
                 name,
                 email,
@@ -16,14 +16,11 @@ const billingUpdate=(name,email,address,contact,country,state,zip)=>{
         console.log(res);
     } catch (err) {
         console.log(err);
-        res.status(400).json({
-            status:"fail",
-            err
-        });
     }
 }
 
-document.querySelector(".btn").addEventListener("click", function(){
+document.querySelector(".btn").addEventListener("submit", function(e){
+    e.preventDefault();
     const name = document.querySelector("#firstName").value;
     const email = document.querySelector("#email").value;
     const address = document.querySelector("#address").value;
@@ -31,5 +28,6 @@ document.querySelector(".btn").addEventListener("click", function(){
     const country = document.querySelector("#country").value;
     const state = document.querySelector("#state").value;
     const zip = document.querySelector("#zip").value;
+    billingUpdate(name,email,address,contact,country,state,zip);
 
 })

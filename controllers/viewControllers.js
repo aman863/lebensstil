@@ -39,9 +39,11 @@ exports.token=(req,res,next)=>{
 }
 exports.getCheckoutPage=(req,res)=>{
   const order_id= req.order_id;
+  const key= req.key;
   
 
 res.render("checkout",{
-  order_id
+  order_id,
+  key
 });
 }

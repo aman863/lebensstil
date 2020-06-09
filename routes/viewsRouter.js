@@ -24,5 +24,6 @@ router.route("/resetPassword/:token").get(viewControllers.getResetPasswordPage);
 router.route("/resetPassword/:token").patch(authControllers.resetPassword);
 router.route("/payment").get(paymentControllers.createOrder, viewControllers.getCheckoutPage);
 router.route("/razorpayUpdate").post(authControllers.protect,userControllers.razorpayUpdate);
+router.route("/verifyPayment").post(paymentControllers.verifyPayment);
 
 module.exports= router;
