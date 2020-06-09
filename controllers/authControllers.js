@@ -253,7 +253,7 @@ exports.mailVerification= async(req,res)=>{
    user.verified=true;
    console.log("user");
    await user.save({validateBeforeSave:false});
-   res.redirect("/me");
+   next();
 }
 catch(err){
     console.log(err);
