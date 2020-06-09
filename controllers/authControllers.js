@@ -243,7 +243,7 @@ exports.logout=async(req,res)=>{
     });
     res.redirect("/login");
 }
-exports.mailVerification= async(req,res)=>{
+exports.mailVerification= async(req,res,next)=>{
     try{
   const user= await User.findOne({mailVerification:req.params.token}); 
   if(!user){
