@@ -155,6 +155,8 @@ exports.razorpayUpdate=async(req,res)=>{
             payment:true
 
         }
+        console.log("hello from razor");
+        console.log(req.body);
         const updatedUser= await User.findOneAndUpdate({email:user.email},updateOptions,{new:true});
         const generated_signature = hmac_sha256(req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id, "trzSHuA3lj6eudlbKt0FFbfm");
 

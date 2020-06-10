@@ -54,15 +54,7 @@ const userSchema= new mongoose.Schema({
     contact:{
         type:Number
     },
-    country:{
-        type:String
-    },
-    state:{
-        type:String
-    },
-    zip:{
-        type:String
-    },
+    
     razorpayOrderId:String,
     razorpayPaymentId:String,
     razorpaySignature:String,

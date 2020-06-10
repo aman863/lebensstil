@@ -18,26 +18,25 @@ exports.signUp=async(req,res,next)=>{
         const newUser= await User.create({
             name:req.body.name,
             email:req.body.email,
-            password:req.body.password,
-            passwordConfirm:req.body.passwordConfirm,
-            referalCode:req.body.referalCode,
+            contact:req.body.contact,
+            address:req.body.address,
             mailVerification:mailVerification
         });
-        console.log("done");
+     
         const url=`${req.protocol}://${req.get("host")}/mailVerification/${mailVerification}`;
-        console.log(url);
+     
         await new Email(newUser,url).sendWelcome();
-        console.log(newUser._id);
+       
         const token = jwt.sign({id:newUser._id},process.env.JWT_SECRET,{
             expiresIn:"30d"
         });
-        console.log(token);
+       
        
         const cookieOptions={
             expires: new Date(Date.now()+ 30*24*60*60*1000),
         }
         // we want secure option only in prodcution not in production
-        // if(process.env.NODE_ENV==="production") cookieOptions.secure=true; 
+        if(process.env.NODE_ENV==="production") cookieOptions.secure=true; 
         res.cookie("jwt",token,cookieOptions);
           res.status(200).json({
               status:"success",
