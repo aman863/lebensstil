@@ -14,7 +14,7 @@ exports.signUp=async(req,res,next)=>{
         //     return next(new AppError("Invalid referal code",400));
         // }
         const mailVerification=await crypto.randomBytes(32).toString("hex");
-        console.log(mailVerification);
+       
         const newUser= await User.create({
             name:req.body.name,
             email:req.body.email,

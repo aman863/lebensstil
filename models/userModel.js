@@ -19,22 +19,22 @@ const userSchema= new mongoose.Schema({
         unique:[true,"Email id already registered"]
 
     },
-    password:{
-        type:String,
-        minlength:[8,"Password must be more that 8 characters long"],
-        required:true,
-        select:false
-    },
-    passwordConfirm:{
-        type: String,
-        required:true,
-        validate:{
-            validator: function(el){
-                return el===this.password
-            },
-            message:"Passwords don't match"
-        }
-    },
+    // password:{
+    //     type:String,
+    //     minlength:[8,"Password must be more that 8 characters long"],
+    //     required:true,
+    //     select:false
+    // },
+    // passwordConfirm:{
+    //     type: String,
+    //     required:true,
+    //     validate:{
+    //         validator: function(el){
+    //             return el===this.password
+    //         },
+    //         message:"Passwords don't match"
+    //     }
+    // },
     changedPasswordAt: {
         type: Date
     },
@@ -49,19 +49,18 @@ const userSchema= new mongoose.Schema({
         default:false
     },
     address:{
-        type:String
+        type:String,
+        required:[true,'Address is required']
     },
     contact:{
-        type:Number
+        type:Number,
+        required:[true,'Contact number is required']
     },
-    
+
     razorpayOrderId:String,
     razorpayPaymentId:String,
-    razorpaySignature:String,
-    payment:{
-        type:Boolean,
-        default:false
-    }
+    razorpaySignature:String
+   
     
 })
 userSchema.plugin(uniqueValidator);
