@@ -20,8 +20,7 @@ exports.getSignUpPage = (req, res) => {
 
 exports.getVerificationPage= (req,res)=>{
   res.status(200).render("text",{heading:"we have sent an verification link to your email.Please verify",
-  title:"Verify",
-  link:"Resend Mail"
+  title:"Verify"
 
   });
 }
@@ -53,9 +52,5 @@ exports.getSchedulePage=(req,res)=>{
   res.render("schedule");
 }
 exports.getConfirmationPage=(req,res)=>{
-  res.status(200).render("text",{heading:"Congratulations ! You are now part of Lebenstill family. Our team will contact you soon",
-  title:"Confirmed",
-  link:"Home"
-
-  });
+  res.status(200).render("confirmation");
 }
