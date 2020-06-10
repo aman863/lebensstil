@@ -1,8 +1,8 @@
 
 
-const signup=async(name,email,password,passwordConfirm)=>{
+const signup=async(name,email,contact,address)=>{
   try{
-    console.log(name,email);
+    
   const res= await axios({
     method:"post",
     url:"/api/v1/user/signUp",
