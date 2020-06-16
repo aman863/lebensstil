@@ -26,5 +26,6 @@ router.route("/payment").get(paymentControllers.createOrder, viewControllers.get
 router.route("/razorpayUpdate").post(userControllers.razorpayUpdate);
 router.route("/verifyPayment").post(paymentControllers.verifyPayment);
 router.route("/schedule").get(viewControllers.getSchedulePage);
+router.route("/confirmation").get(viewControllers.getConfirmationPage);
 
 module.exports= router;

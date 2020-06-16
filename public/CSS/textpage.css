@@ -76,7 +76,7 @@
     font-family: 'Montserrat', sans-serif;
     display: inline-block;
     text-transform: uppercase;
-    color: black;
+    color:white;
     text-decoration: none;
     border: 2px solid;
     background: transparent;
@@ -85,11 +85,11 @@
     font-weight: 700;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
-    margin-top:150px;
+    margin-top:280px;
   }
   
   .notfound a:hover {
-    color: black;
+    color: white;
   }
   
   @media only screen and (max-width: 767px) {
@@ -103,4 +103,5 @@
         font-size: 182px;
     }
   }
+  
   
