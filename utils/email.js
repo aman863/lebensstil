@@ -8,7 +8,7 @@ module.exports= class Email{
         this.to= user.email;
         this.firstName= user.name.split(" ")[0];
         this.url= url;
-        this.from=`Lebensstil<support@lebesstil.in>`;
+        this.from=`Lebensstil<${process.env.EMAIL_FROM}>`;
     }
     newTransport(){
         if(process.env.NODE_ENV==="production"){
@@ -55,7 +55,7 @@ module.exports= class Email{
 
          async sendWelcome(){
              console.log("welcome")
-             await this.send("welcomeEmail","welcome to Lebensstil");
+             await this.send("welcomeEmail","Verify Your Email");
          }
          async sendResetPassword(){
              await this.send("resetPasswordEmail","Reset Password");

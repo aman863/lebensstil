@@ -19,8 +19,8 @@ exports.getSignUpPage = (req, res) => {
 };
 
 exports.getVerificationPage= (req,res)=>{
-  res.status(200).render("text",{heading:"we have sent an verification link to your email.Please verify",
-  title:"Verify"
+  res.status(200).render("text",{heading:"we have sent a verification link to your email.Please verify",
+  title:"Verification"
 
   });
 }
