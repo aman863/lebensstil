@@ -551,6 +551,10 @@ section{
 	.ubutia-card{
 		margin-bottom: 60px;
 	}
+	.expert.bg-img{
+		height: 70%;
+		width: 70%
+	}
 }
 
 
