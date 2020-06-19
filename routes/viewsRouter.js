@@ -14,7 +14,7 @@ router.route("/").get(viewControllers.getHomePage);
 router.route("/signup").get(viewControllers.getSignUpPage);
 router.route("/login").get(viewControllers.getLoginPage);
 router.route("/me").get(authControllers.protect,authControllers.checkVerification, viewControllers.getDashboard);
-router.route("/mailVerification/:token").get(viewControllers.getConfirmationPage);
+router.route("/mailVerification/:token").get(authControllers.mailVerification,viewControllers.getConfirmationPage);
 // router.route("/logout").get(authControllers.protect,authControllers.logout);
 router.route("/text").get(viewControllers.getVerificationPage);
 router.route("/resendVerificationEmail").get(authControllers.resendVerificationEmail);
