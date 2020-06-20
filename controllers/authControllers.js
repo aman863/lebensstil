@@ -36,13 +36,7 @@ exports.signUp=async(req,res,next)=>{
             expires: new Date(Date.now()+ 30*24*60*60*1000),
         }
         // we want secure option only in prodcution not in production
-        if(process.env.NODE_ENV==="production") cookieOptions.secure=true; 
-        res.cookie("jwt",token,cookieOptions);
-          res.status(200).json({
-              status:"success",
-              token,
-              newUser
-          });
+       res.redirect('/text');
         
     } catch (error) {
         console.log(error)
