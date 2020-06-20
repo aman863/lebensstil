@@ -27,14 +27,14 @@ exports.signUp=async(req,res,next)=>{
      
         await new Email(newUser,url).sendWelcome();
        
-        const token = jwt.sign({id:newUser._id},process.env.JWT_SECRET,{
-            expiresIn:"30d"
-        });
+        // const token = jwt.sign({id:newUser._id},process.env.JWT_SECRET,{
+        //     expiresIn:"30d"
+        // });
        
        
-        const cookieOptions={
-            expires: new Date(Date.now()+ 30*24*60*60*1000),
-        }
+        // const cookieOptions={
+        //     expires: new Date(Date.now()+ 30*24*60*60*1000),
+        // }
         // we want secure option only in prodcution not in production
        res.redirect('/text');
         
